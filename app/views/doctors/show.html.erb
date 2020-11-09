@@ -9,6 +9,6 @@
 <% @doctor.patients.each do |patient| %>
   <section id='patients-<%= patient.id %>'>
   <p>Name: <%= patient.name %></p>
-  <%= link_to "Remove Patient From Caseload", "/doctors/#{@doctor.id}/patients?patient_id=#{patient.id}", method: :delete %>
+  <%= button_to "Remove Patient From Caseload", "/doctors/#{@doctor.id}/patients?patient_id=#{patient.id}", method: :delete %>
 </section>
 <% end %>
