@@ -8,7 +8,7 @@ describe "As a visitor" do
 
       # Doctors:
       @jim = @hospital1.doctors.create(name: "Jim", speciality: "General Surgery", school: "Harvard University")
-      @brian = @hospital2.doctors.create(name: "Brian", speciality: "Pediatric Surgery", school: "Johns Hopkins University")
+      @brian = @hospital2.doctors.create(name: "Brian", speciality: "Pediatric Surgery", school: "University of Pennsylvania")
       @tim = @hospital2.doctors.create(name: "Tim", speciality: "Attending Surgeon", school: "University of Pennsylvania")
     end
 
@@ -24,6 +24,14 @@ describe "As a visitor" do
        expect(page).to_not have_content("Doctors: 2")
        expect(page).to_not have_content(@brian.school)
        expect(page).to_not have_content(@tim.school)
+
+       visit "/hospitals/#{@hospital2.id}"
+
+       expect(page).to have_content(@hospital2.name)
+       expect(page).to have_content("Doctors: 2")
+       expect(page).to have_content(@brian.school)
+       expect(page).to have_content(@tim.school)
+       expect(page).to have_content(@hospital2.doctors_school.to_sentence)
     end
   end
 end
