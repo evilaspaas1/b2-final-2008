@@ -17,7 +17,7 @@ describe "As a visitor" do
       visit "/doctors/#{@jim.id}"
 
       within "#patients-#{@austin.id}" do
-       click_link "Remove Patient From Caseload"
+       click_button "Remove Patient From Caseload"
       end
 
       expect(current_path).to eq("/doctors/#{@jim.id}")
