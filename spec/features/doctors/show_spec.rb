@@ -25,13 +25,13 @@ describe "As a visitor" do
       visit "/doctors/#{@jim.id}"
 
       expect(page).to have_content(@jim.name)
-      
+
       within "#info-#{@jim.id}" do
         expect(page).to have_content(@jim.speciality)
         expect(page).to have_content(@jim.school)
         expect(page).to have_content(@jim.hospital.name)
       end
-      within "#patients-#{@jim.id}" do
+      within "#patients-#{@austin.id}" do
         expect(page).to have_content(@austin.name)
       end
 
