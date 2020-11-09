@@ -17,7 +17,7 @@ RSpec.describe Hospital do
     end
 
     it "#doctors_school" do
-      expect(@hospital1.doctors_school).to eq("#{@jim.school} and #{@brian.school}")
+      expect(@hospital1.doctors_school).to eq([@jim.school, @brian.school])
     end
   end
 end
