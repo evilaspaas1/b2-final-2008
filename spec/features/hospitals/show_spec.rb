@@ -18,6 +18,7 @@ describe "As a visitor" do
        expect(page).to have_content(@hospital1.name)
        expect(page).to have_content("Doctors: 1")
        expect(page).to have_content(@jim.school)
+       expect(page).to have_content(@hospital1.doctors_school.to_sentence)
 
        expect(page).to_not have_content(@hospital2.name)
        expect(page).to_not have_content("Doctors: 2")
