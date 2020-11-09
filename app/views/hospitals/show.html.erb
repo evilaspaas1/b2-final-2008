@@ -5,6 +5,6 @@
     <p>This Hospital has no doctors.</p>
   <% else%>
     <p>Doctors: <%= @hospital.doctors.count %></p>
-    <p>Doctors were educated at: <%= @hospital.doctors_school %></p>
+    <p>Doctors were educated at: <%= @hospital.doctors_school.to_sentence %></p>
   <% end %>
 </section>
