@@ -1,0 +1,10 @@
+<h1><%= @hospital.name %></h1>
+
+<section class='doctors'>
+  <% if @hospital.doctors.empty? %>
+    <p>This Hospital has no doctors.</p>
+  <% else%>
+    <p>Doctors: <%= @hospital.doctors.count %></p>
+    <p>Doctors were educated at: <%= @hospital.doctors_school %></p>
+  <% end %>
+</section>
